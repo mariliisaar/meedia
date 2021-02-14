@@ -1,0 +1,94 @@
+body {
+    background-color: #fff;
+    background-image: url("../../media/pics/dragon_center.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 250px; 
+    color: #000;
+    font-family: arial;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: #0E7359;
+}
+
+img, audio, video, iframe {
+    max-width: 100%;
+}
+
+section {
+    background-color: rgba(213, 240, 231, .2);
+    background-image: url("../../media/pics/dragon_top_left.svg"), url("../../media/pics/dragon_top_right.svg"), url("../../media/pics/dragon_bottom_left.svg"), url("../../media/pics/dragon_bottom_right.svg");
+    background-repeat: no-repeat;
+    background-size: 50px, 60px, 70px, 100px;
+    background-position: top left, top right, bottom left, bottom right;
+    width: calc(100%-20px);
+    min-width: 100px;
+    min-height: 100px;
+    padding: 0 10px 80px 10px;
+    margin: 5px 10px;
+    color: #000;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    right: 50px;
+    border-top: 1px solid #27B28E;
+    border-bottom: 1px solid #0E7359;
+    z-index: -1;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    bottom: 80px;
+    border-left: 1px solid #27B28E;
+    border-right: 1px solid #27B28E;
+    z-index: -1;
+}
+
+section h1, h2, h3 {
+    text-align: center;
+    color: #440E78;
+}
+
+section h2 {
+    padding: 20px 50px 0 45px;
+}
+
+nav {
+    background-color: rgba(222, 213, 240, .2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 3px double #27B28E;
+    margin-bottom: 50px;
+}
+
+nav a {
+    color: #0E7359;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #27B28E;
+}
+
+.bags {
+    display: flex;
+    flex-wrap: wrap;
+}
