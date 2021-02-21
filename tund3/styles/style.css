@@ -130,6 +130,11 @@ nav a:hover {
 
 #img_sky {
     top: 1px;
+    z-index: 1;
+}
+
+#img_land {
+    z-index: 3;
 }
 
 #windmill {
@@ -137,9 +142,10 @@ nav a:hover {
     height: 360px;
     /* border: 1px solid teal; */
     left: 557px;
-    top: 70px;
-    transform: scale(.6) rotate(3deg);
+    top: 0px;
+    transform: scale(.5) rotate(3deg);
     transform-origin: top left;
+    z-index: 2;
 }
 
 #wm_body {
@@ -161,6 +167,7 @@ nav a:hover {
     -webkit-animation: MoveUpDown 4s linear infinite;
     -moz-animation: MoveUpDown 4s linear infinite;
     animation: MoveUpDown .5s linear infinite;
+    z-index: 4;
 }
 
 @-moz-keyframes MoveUpDown { 0%, 100% {transform: scale(.7) rotate(2deg) translateY(0); } 50% { transform: scale(.7) rotate(2deg) translateY(-3px); } }
@@ -191,16 +198,17 @@ nav a:hover {
     width: 500px;
     height: 250px;
     transform-origin: top right;
-    right: 140px;
-    top: 104px;
+    right: 130px;
+    top: 134px;
     -webkit-animation: TruckMoveUpDown .5s linear infinite;
     -moz-animation: TruckMoveUpDown .5s linear infinite;
     animation: TruckMoveUpDown .5s linear infinite;
+    z-index: 4;
 }
 
-@-moz-keyframes TruckMoveUpDown { 0%, 100% {transform: scaleX(-1) rotate(5deg) scale(.2) translateY(0); } 50% { transform: scaleX(-1) rotate(5deg) scale(.2) translateY(-3px); } }
-@-webkit-keyframes TruckMoveUpDown { 0%, 100% {transform: scaleX(-1) rotate(5deg) scale(.2) translateY(0); } 50% { transform: scaleX(-1) rotate(5deg) scale(.2) translateY(-3px); } }
-@keyframes TruckMoveUpDown { 0%, 100% {transform: scaleX(-1) rotate(5deg) scale(.2) translateY(0); } 50% { transform: scaleX(-1) rotate(5deg) scale(.2) translateY(-3px); } }
+@-moz-keyframes TruckMoveUpDown { 0%, 100% {transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(0); } 50% { transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(-3px); } }
+@-webkit-keyframes TruckMoveUpDown { 0%, 100% {transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(0); } 50% { transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(-3px); } }
+@keyframes TruckMoveUpDown { 0%, 100% {transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(0); } 50% { transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(-3px); } }
 
 #truck_wheel_back {
     left: 10px;
