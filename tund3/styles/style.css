@@ -1,0 +1,234 @@
+body {
+    background-color: #fff;
+    background-image: url("../../media/pics/dragon_center.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 250px; 
+    color: #000;
+    font-family: arial;
+    margin: 0;
+}
+
+/* main {
+    margin: 10px;
+} */
+
+h1, h2, h3 {
+    color: #0E7359;
+}
+
+img, audio, video, iframe {
+    max-width: 100%;
+}
+
+section {
+    background-color: rgba(213, 240, 231, .3);
+    background-image: url("../../media/pics/dragon_top_left.svg"), url("../../media/pics/dragon_top_right.svg"), url("../../media/pics/dragon_bottom_left.svg"), url("../../media/pics/dragon_bottom_right.svg");
+    background-repeat: no-repeat;
+    background-size: 50px, 60px, 70px, 100px;
+    background-position: top left, top right, bottom left, bottom right;
+    background-origin: padding-box; /*vaikimis väärtus padding-box; võimalik ka content-box v border-box*/
+    /* background-clip: border-box; */ /*taustapildi võimalused; samad variandid kui background-origin*/
+    width: 80%;
+    min-width: 100px;
+    min-height: 400px;
+    max-height: 600px;
+    margin: 5px auto;
+    padding: 0 70px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 10px;
+    border: 3px dotted #0E7359;
+    overflow: auto;
+}
+
+/* section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    right: 50px;
+    border-top: 1px solid #27B28E;
+    border-bottom: 1px solid #0E7359;
+    z-index: -1;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    bottom: 80px;
+    border-left: 1px solid #27B28E;
+    border-right: 1px solid #27B28E;
+    z-index: -1;
+} */
+
+section:last-of-type {
+    margin-bottom: 60px;
+}
+
+section h1, h2, h3 {
+    text-align: center;
+    color: #440E78;
+}
+
+section h2 {
+    padding: 20px 50px 0 45px;
+}
+
+nav {
+    background-color: rgba(222, 213, 240, 1);
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 3px double #27B28E;
+    margin-bottom: 50px; */
+    box-sizing: border-box;
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid #0E7359;
+}
+
+nav a {
+    color: #0E7359;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #27B28E;
+}
+
+.bags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#stage { /*NB! ei ole hea praktika!*/
+    width: 900px;
+    min-height: 437px;
+    /* background-color: purple; */
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+#stage * {
+    position: absolute;
+}
+
+#landscape {
+    width: 100%;
+    height: 100%;
+}
+
+#img_sky {
+    top: 1px;
+}
+
+#windmill {
+    width: 308px;
+    height: 360px;
+    /* border: 1px solid teal; */
+    left: 557px;
+    top: 70px;
+    transform: scale(.6) rotate(3deg);
+    transform-origin: top left;
+}
+
+#wm_body {
+    bottom: 0px;
+}
+
+#wm_wings {
+    -webkit-animation: Spin 8s linear infinite;
+    -moz-animation: Spin 8s linear infinite;
+    animation: Spin 8s linear infinite;
+}
+
+#car {
+    width: 477px;
+    height: 232px;
+    transform-origin: top left;
+    top: 153px;
+    left: 20px;
+    -webkit-animation: MoveUpDown 4s linear infinite;
+    -moz-animation: MoveUpDown 4s linear infinite;
+    animation: MoveUpDown .5s linear infinite;
+}
+
+@-moz-keyframes MoveUpDown { 0%, 100% {transform: scale(.7) rotate(2deg) translateY(0); } 50% { transform: scale(.7) rotate(2deg) translateY(-3px); } }
+@-webkit-keyframes MoveUpDown { 0%, 100% {transform: scale(.7) rotate(2deg) translateY(0); } 50% { transform: scale(.7) rotate(2deg) translateY(-3px); } }
+@keyframes MoveUpDown { 0%, 100% {transform: scale(.7) rotate(2deg) translateY(0); } 50% { transform: scale(.7) rotate(2deg) translateY(-3px); } }
+
+#car_wheel_back {
+    left: 32px;
+    bottom: 0;
+    -webkit-animation: Spin 4s linear infinite;
+    -moz-animation: Spin 4s linear infinite;
+    animation: Spin 4s linear infinite;
+}
+
+#car_wheel_front {
+    right: 45px;
+    bottom: 0;
+    -webkit-animation: Spin 4s linear infinite;
+    -moz-animation: Spin 4s linear infinite;
+    animation: Spin 4s linear infinite;
+}
+
+@-moz-keyframes Spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes Spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes Spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+#truck {
+    width: 500px;
+    height: 250px;
+    transform-origin: top right;
+    right: 140px;
+    top: 104px;
+    -webkit-animation: TruckMoveUpDown .5s linear infinite;
+    -moz-animation: TruckMoveUpDown .5s linear infinite;
+    animation: TruckMoveUpDown .5s linear infinite;
+}
+
+@-moz-keyframes TruckMoveUpDown { 0%, 100% {transform: scaleX(-1) rotate(5deg) scale(.2) translateY(0); } 50% { transform: scaleX(-1) rotate(5deg) scale(.2) translateY(-3px); } }
+@-webkit-keyframes TruckMoveUpDown { 0%, 100% {transform: scaleX(-1) rotate(5deg) scale(.2) translateY(0); } 50% { transform: scaleX(-1) rotate(5deg) scale(.2) translateY(-3px); } }
+@keyframes TruckMoveUpDown { 0%, 100% {transform: scaleX(-1) rotate(5deg) scale(.2) translateY(0); } 50% { transform: scaleX(-1) rotate(5deg) scale(.2) translateY(-3px); } }
+
+#truck_wheel_back {
+    left: 10px;
+    bottom: -32px;
+    transform: scale(.5);
+    -webkit-animation: TruckSpin 4s linear infinite;
+    -moz-animation: TruckSpin 4s linear infinite;
+    animation: TruckSpin 4s linear infinite;
+    
+}
+
+#truck_wheel_front {
+    right: -32px;
+    bottom: -32px;
+    transform: scale(.5);
+    -webkit-animation: TruckSpin 4s linear infinite;
+    -moz-animation: TruckSpin 4s linear infinite;
+    animation: TruckSpin 4s linear infinite;
+}
+
+@-moz-keyframes TruckSpin { 100% { -moz-transform: scale(.5) rotate(360deg); } }
+@-webkit-keyframes TruckSpin { 100% { -webkit-transform: scale(.5) rotate(360deg); } }
+@keyframes TruckSpin { 100% { -webkit-transform: scale(.5) rotate(360deg); transform: scale(.5) rotate(360deg); } }
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(222, 213, 240);
+    position: fixed;
+    bottom: 0px;
+}
