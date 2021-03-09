@@ -1,0 +1,354 @@
+body {
+    background-color: #fff;
+    background-image: url("../../media/pics/dragon_center.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 250px; 
+    color: #000;
+    font-family: arial;
+    margin: 0;
+}
+
+/* main {
+    margin: 10px;
+} */
+
+h1, h2, h3 {
+    color: #0E7359;
+}
+
+h1 {
+    transition: color 1s;
+}
+
+h1:hover {
+    color: #440E78;
+}
+
+img, audio, video, iframe {
+    max-width: 100%;
+}
+
+section {
+    background-color: rgba(213, 240, 231, .3);
+    background-image: url("../../media/pics/dragon_top_left.svg"), url("../../media/pics/dragon_top_right.svg"), url("../../media/pics/dragon_bottom_left.svg"), url("../../media/pics/dragon_bottom_right.svg");
+    background-repeat: no-repeat;
+    background-size: 50px, 60px, 70px, 100px;
+    background-position: top left, top right, bottom left, bottom right;
+    background-origin: padding-box; /*vaikimis väärtus padding-box; võimalik ka content-box v border-box*/
+    /* background-clip: border-box; */ /*taustapildi võimalused; samad variandid kui background-origin*/
+    width: 80%;
+    min-width: 100px;
+    min-height: 400px;
+    max-height: 600px;
+    margin: 5px auto;
+    padding: 0 70px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 10px;
+    border: 3px dotted #0E7359;
+    overflow: auto;
+}
+
+/* section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    right: 50px;
+    border-top: 1px solid #27B28E;
+    border-bottom: 1px solid #0E7359;
+    z-index: -1;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    bottom: 80px;
+    border-left: 1px solid #27B28E;
+    border-right: 1px solid #27B28E;
+    z-index: -1;
+} */
+
+section:last-of-type {
+    margin-bottom: 60px;
+}
+
+section h1, h2, h3 {
+    text-align: center;
+    color: #440E78;
+}
+
+section h2 {
+    padding: 20px 50px 0 45px;
+}
+
+nav {
+    background-color: rgba(222, 213, 240, 1);
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 3px double #27B28E;
+    margin-bottom: 50px; */
+    box-sizing: border-box;
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid #0E7359;
+}
+
+nav a {
+    color: #0E7359;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #27B28E;
+}
+
+.tlu, #media {
+    display: block;
+}
+
+.tlu_logo {
+  float: left;  
+  margin-right: 10px;
+  transform-origin: 0px top; /*0% 0%    left top    0px 0px*/
+  /*top center bottom   left center right   0 - 100%    px*/
+  transform: translate(0px, 0px) scale(1.8) rotate(0deg) skew(0deg);
+  /* transition-property: transform;  */
+  /*"all" või komadega eraldades mitu omadust*/
+  /* transition-duration: 2s; */
+  /* transition-delay: 2s; */
+  /*transition-timing-function: ease-in-out; /*ease  linear  ease-in ease-out    ease-in-out*/
+  transition: transform 2s 2s ease-in-out;
+}
+
+.tlu_logo:hover {
+    transform: scale(1);
+}
+
+.bags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photoplace {
+    width: 600px;
+    height: 420px;
+    padding: 0px;
+    position: relative;
+    display: inline-block;
+}
+
+.fadephoto {
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+.bot-btn {
+    width: 100px;
+    bottom: 0px;
+}
+
+.bot-right-btn {
+    right: 0px;
+}
+
+.stage { /*NB! ei ole hea praktika!*/
+    width: 900px;
+    min-height: 437px;
+    /* background-color: purple; */
+    position: relative;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+.stage *, .photoplace * {
+    position: absolute;
+}
+
+.landscape {
+    width: 100%;
+    height: 100%;
+}
+
+.img_sky {
+    top: 1px;
+    z-index: 1;
+}
+
+.img_land {
+    z-index: 3;
+}
+
+.windmill {
+    width: 308px;
+    height: 360px;
+    /* border: 1px solid teal; */
+    left: 557px;
+    top: 0px;
+    transform: scale(.5) rotate(3deg);
+    transform-origin: top left;
+    z-index: 2;
+}
+
+.wm_body {
+    bottom: 0px;
+}
+
+.wm_wings {
+    animation: spin 8s linear infinite reverse;
+}
+
+.car {
+    width: 477px;
+    height: 232px;
+    transform-origin: top left;
+    top: 153px;
+    left: 20px;
+    animation: MoveUpDown .5s linear infinite;
+    z-index: 4;
+}
+
+.car_wheel {
+    bottom: 0;
+    animation: spin 4s linear infinite;
+}
+
+.car_wheel_back {
+    left: 32px;
+}
+
+.car_wheel_front {
+    right: 45px;
+}
+
+.truckarea {
+    width: 104px;
+    height: 59px;
+    animation: drive 10s linear both paused;
+    z-index: 4;
+}
+
+.truck {
+    top: 0;
+    left: 106px;
+    width: 500px;
+    height: 250px;
+    transform-origin: top left;
+    animation: TruckMoveUpDown .5s linear infinite; 
+}
+
+.truckwheel {
+    width: 148px;
+    height: 148px;
+    bottom: -32px;
+    transform: scale(.5);
+}
+
+.truckwheelRear {
+    left: 10px;
+}
+
+.truckwheelFront {
+    right: -32px;
+}
+
+.truck_wheel_spin {
+    animation: spin 1.5s linear infinite;
+}
+
+.smoke {
+    top: 180px;
+    left: 40px;
+    animation: smoking 3s ease-out infinite;
+}
+
+.smoke2 {
+    animation-delay: .5s;
+}
+
+.smoke3 {
+    animation-delay: 1s;
+}
+
+.smoke4 {
+    animation-delay: 1.5s;
+}
+
+.smoke5 {
+    animation-delay: 2s;
+}
+
+.smoke6 {
+    animation-delay: 2.5s;
+}
+
+.ruut {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    z-index: 4;
+    animation-name: ruuduLiikumine;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: 3; /* infinite */
+    animation-direction: alternate; /* normal    reverse alternate   alternate-reverse */
+    animation-fill-mode: both; /* none   backwards   forwards   both */ /* Kuhu animatsioon pidama jääb */
+    animation-play-state: running; /* running  paused */
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(222, 213, 240);
+    position: fixed;
+    bottom: 0px;
+    z-index: 5;
+}
+
+@keyframes ruuduLiikumine {
+    0% {transform: translate(0px, 400px); background-color: red;}
+    50% {background-color: yellow;}
+    100% {transform: translate(870px, 400px); background-color: green;}
+}
+
+@keyframes smoking {
+    0% {transform: translate(0px, 0px) scale(.5); opacity: 1;}
+    100% {transform: translate(-800px, -400px) scale(20); opacity: 0;}
+}
+
+@keyframes spin { 
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes drive {
+    0% {transform: translate(900px, 134px);}
+    100% {transform: translate(-230px, 134px);}
+}
+
+@keyframes driveback {
+    0% {transform: translate(-110px, 134px) scale(-1, 1);}
+    100% {transform: translate(1100px, 134px) scale(-1, 1);}
+}
+
+@keyframes MoveUpDown { 
+    0%, 100% {transform: scale(.7) rotate(2deg) translateY(0);} 
+    50% {transform: scale(.7) rotate(2deg) translateY(-3px);} 
+}
+
+@keyframes TruckMoveUpDown { 
+    0%, 100% {transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(0);} 
+    50% {transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(-15px);} 
+}
