@@ -206,22 +206,31 @@ nav a:hover {
 }
 
 .wm_wings {
-    animation: spin 8s linear infinite reverse;
+    animation: spin 8s linear infinite reverse paused;
+}
+
+.cararea {
+    width: 340px;
+    height: 175px;
+    top: 75px;
+    left: -230px;
+    animation: drive 10s linear both paused;
+    z-index: 4;
 }
 
 .car {
     width: 477px;
     height: 232px;
     transform-origin: top left;
-    top: 153px;
-    left: 20px;
-    animation: MoveUpDown .5s linear infinite;
+    /* top: 153px;
+    left: 20px; */
+    animation: MoveUpDown .5s linear infinite paused;
     z-index: 4;
 }
 
 .car_wheel {
     bottom: 0;
-    animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite paused;
 }
 
 .car_wheel_back {
@@ -232,20 +241,56 @@ nav a:hover {
     right: 45px;
 }
 
+.night {
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e52;
+    transition: opacity 5s;
+    opacity: 0;
+    position: absolute;
+    z-index: 5;
+}
+
+.cone {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.carcone {
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid transparent;
+    border-right: 170px solid #ffffcc;
+    bottom: -20px;
+    right: -110px;
+    animation: carUpDown .5s linear infinite paused;
+}
+
+.truckcone {
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 130px solid #ffffcc;
+    bottom: 0px;
+    left: 90px;
+    animation: upDown .5s linear infinite paused;
+}
+
 .truckarea {
     width: 104px;
     height: 59px;
-    animation: drive 10s linear both paused;
+    animation: driveback 10s linear both paused;
     z-index: 4;
 }
 
 .truck {
-    top: 0;
-    left: 106px;
+    /* top: 0;
+    left: 106px; */
     width: 500px;
     height: 250px;
     transform-origin: top left;
-    animation: TruckMoveUpDown .5s linear infinite; 
+    animation: TruckMoveUpDown .5s linear infinite paused; 
 }
 
 .truckwheel {
@@ -264,32 +309,38 @@ nav a:hover {
 }
 
 .truck_wheel_spin {
-    animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite paused;
 }
 
 .smoke {
     top: 180px;
     left: 40px;
-    animation: smoking 3s ease-out infinite;
+    animation: smoking 3s ease-out infinite paused;
 }
 
-.smoke2 {
+.carsmoke {
+    top: 180px;
+    left: 40px;
+    animation: smokingCar 3s ease-out infinite paused;
+}
+
+.smoke2, .carsmoke2 {
     animation-delay: .5s;
 }
 
-.smoke3 {
+.smoke3, .carsmoke3 {
     animation-delay: 1s;
 }
 
-.smoke4 {
+.smoke4, .carsmoke4 {
     animation-delay: 1.5s;
 }
 
-.smoke5 {
+.smoke5, .carsmoke5 {
     animation-delay: 2s;
 }
 
-.smoke6 {
+.smoke6, .carsmoke6 {
     animation-delay: 2.5s;
 }
 
@@ -328,19 +379,34 @@ footer {
     100% {transform: translate(-800px, -400px) scale(20); opacity: 0;}
 }
 
+@keyframes smokingCar {
+    0% {transform: translate(0px, 0px) scale(.5); opacity: 1;}
+    100% {transform: translate(-400px, -200px) scale(10); opacity: 0;}
+}
+
 @keyframes spin { 
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
 }
 
 @keyframes drive {
-    0% {transform: translate(900px, 134px);}
-    100% {transform: translate(-230px, 134px);}
+    0% {transform: translate(-110px, 134px);}
+    100% {transform: translate(1350px, 134px);}
 }
 
 @keyframes driveback {
-    0% {transform: translate(-110px, 134px) scale(-1, 1);}
-    100% {transform: translate(1100px, 134px) scale(-1, 1);}
+    0% {transform: translate(1200px, 134px) scale(-1, 1);}
+    100% {transform: translate(-300px, 134px) scale(-1, 1);}
+}
+
+@keyframes upDown { 
+    0%, 100% {transform: rotate(10deg) translateY(0);} 
+    50% {transform: rotate(10deg) translateY(-3px);} 
+}
+
+@keyframes carUpDown { 
+    0%, 100% {transform: rotate(20deg) translateY(0);} 
+    50% {transform: rotate(20deg) translateY(-3px);} 
 }
 
 @keyframes MoveUpDown { 
@@ -349,6 +415,6 @@ footer {
 }
 
 @keyframes TruckMoveUpDown { 
-    0%, 100% {transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(0);} 
-    50% {transform: scaleX(-1) rotate(-5deg) scale(.2) translateY(-15px);} 
+    0%, 100% {transform: rotate(-5deg) scale(.2) translateY(0);} 
+    50% {transform: rotate(-5deg) scale(.2) translateY(-15px);} 
 }

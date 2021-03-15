@@ -6,6 +6,7 @@ let minPicNum = 1;
 let maxPicNum = 43;
 let picNum = 1;
 let picChange = 0;
+let counter = 0;
 
 window.onload = function() {
     // alert(message);
@@ -26,6 +27,7 @@ function setButtons() {
     document.getElementById("stage").addEventListener("animationstart", animInfo);
     document.getElementById("stage").addEventListener("animationend", animInfo);
     document.getElementById("stage").addEventListener("animationiteration", animInfo);
+    document.getElementById("night").addEventListener("transitionend", animInfo);
 }
 
 function enableButtons() {
@@ -113,10 +115,13 @@ function toggleAnim() {
 function animInfo(e) {
     let randomDuration = 8 + Math.round(Math.random() * (13 - 8));
     let randomDelay = 1 + Math.round(Math.random() * (6 - 1));
+    let night = document.getElementById("night");
+    let carcone = document.querySelector(".carcone");
+    let truckcone = document.querySelector(".truckcone");
     if (e.type == "animationend") {
         // console.log(e.animationName);
         // console.log(e.target.id);
-        if (e.target.id == "truckarea") {
+        if (e.target.id == "truckarea" || e.target.id == "cararea") {
             e.target.style.animationDelay = randomDelay + "s";
             e.target.style.animationDuration = randomDuration + "s";
             if (e.animationName == "drive") {
@@ -125,5 +130,42 @@ function animInfo(e) {
                 e.target.style.animationName = "drive";
             }
         }
-    }    
+
+        if (e.target.id == "cararea") {
+            carcone.style.display = "none";
+        }
+
+        if (e.target.id == "truckarea") {
+            truckcone.style.display = "none";
+        }
+    }
+
+
+    if (e.type == "animationstart" && e.target.id == "cararea") {
+        carcone.style.display = "block";
+    }
+
+    if (e.type == "animationstart" && e.target.id == "truckarea") {
+        truckcone.style.display = "block";
+    }
+
+    if (e.type == "animationiteration" && e.target.id == "wm_wings") {
+        counter++;
+        if (counter % 2 == 0) {
+            if(night.style.opacity == 0) {
+                night.style.opacity = 0.8;
+            } else {
+                night.style.opacity = 0;
+                carcone.style.opacity = 0;
+                truckcone.style.opacity = 0;
+            } 
+        }
+    }
+
+    if (e.type == "transitionend") {
+        if(night.style.opacity != 0) {
+            carcone.style.opacity = 1;
+            truckcone.style.opacity = 1;
+        }
+    }
 }
