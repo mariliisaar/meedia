@@ -16,25 +16,72 @@ body {
 
 h1, h2, h3 {
     color: #0E7359;
-    font-family: myColonnaTitle, sans-serif;
-    text-decoration: underline overline;
-    text-shadow: 0px 0px 5px #0E7399;
+    /* font-family: myColonnaTitle, sans-serif; */
+    /* text-decoration: underline overline; */
+    /* text-shadow: 0px 0px 5px #0E7399; */
 }
 
 h1 {
-    transition: color 1s;
+    text-align: center;
+    transition: color 1s, text-shadow 1s;
+    text-shadow: 2px 2px 3px #445E78;
+    position: relative;
+    padding-bottom: 2px;
 }
 
 h1:hover {
     color: #440E78;
+    text-shadow: 2px 2px 3px #0E7399;
 }
 
-p {
+h2 {
+    text-shadow: 1px 2px 2px #777;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+h2::after, h1::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #0E7359;
+    background: linear-gradient(to right, transparent 0%, #27B28E 50%, transparent 100%);
+}
+
+p, pre {
     font-family: lucida-casual, verdana, sans-serif;
+}
+
+pre {
+    font-size: small;
+    font-style: italic;
+}
+
+a:link, a:visited {
+    color: #440E78;
+}
+
+a:hover, a:active {
+    color: #27B28E;
+}
+
+ul {
+    list-style: disc outside url("../../media/pics/list.svg");
+}
+
+ol {
+    list-style: lower-greek;
 }
 
 img, audio, video, iframe {
     max-width: 100%;
+}
+
+dt {
+    font-weight: 600;
 }
 
 section {
@@ -56,7 +103,8 @@ section {
     align-items: flex-start;
     position: relative;
     border-radius: 10px;
-    border: 3px dotted #0E7359;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to bottom, transparent 0%, #27B28E 50%, transparent 100%) 1 100%;
     overflow: auto;
 }
 
@@ -70,9 +118,9 @@ section {
     border-top: 1px solid #27B28E;
     border-bottom: 1px solid #0E7359;
     z-index: -1;
-}
+} */
 
-section::after {
+/* section::after {
     content: "";
     position: absolute;
     left: 0;
@@ -94,6 +142,7 @@ section h1, h2, h3 {
 }
 
 section h2 {
+    width: calc(100% - 95px);
     padding: 20px 50px 0 45px;
 }
 
@@ -124,9 +173,20 @@ nav a:hover {
     display: block;
 }
 
+.tlu {
+    text-align: center;
+}
+
+.columns {
+    column-count: 3;
+    text-align: left;
+    column-gap: 50px;
+}
+
 .tlu_logo {
-    float: left;  
-    margin-right: 10px;
+    margin: auto;
+    /* float: left;   */
+    /* margin-right: 10px; */
     /* transform-origin: 0px top; 0% 0%    left top    0px 0px */
     /*top center bottom   left center right   0 - 100%    px*/
     /* transform: translate(0px, 0px) scale(1.8) rotate(0deg) skew(0deg); */
