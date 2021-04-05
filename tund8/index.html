@@ -253,22 +253,34 @@ quivis antiburschius,
                 </div>
                 <button id="animBtn" type="button">Käivita animatsioon</button>
             </section>
-            <section id="clock">
+            <section id="clockSection">
                 <h2>Ajanäitaja ehk kell</h2>
-                    <button id="clock_speak_btn" type="button">Ütle kellaaeg!</button>
-                    <label for="allow_bell_btn">Löö täistunnil kella</label>
-                    <input type="checkbox" id="allow_bell_btn">
-                <div id="clockArea" class="clockArea">
-                    <div id="clock" class="clock">
-                        <img src="../media/img/clock/clock_box.png" alt="kellakast">
-                        <img src="../media/img/clock/clock_pendulum.png" alt="kellapendel" id="pendulus" class="pendulus">
-                        <div id="clockface" class="clockface">
-                        <img src="../media/img/clock/clock_face.png" alt="kella numbrilaud">
-                        <img src="../media/img/clock/hour_hand.png" alt="kella tunniseier" id="hourhand" class="clockhand">
-                        <img src="../media/img/clock/minute_hand.png" alt="kella minutiseier" id="minutehand" class="clockhand">
-                        <img src="../media/img/clock/second_hand.png" alt="kella sekundiseier" id="secondhand" class="clockhand">
+                <button id="clock_speak_btn" type="button">Ütle kellaaeg!</button>
+                <label for="allow_bell_btn">Löö täistunnil kella</label>
+                <input type="checkbox" id="allow_bell_btn">
+                <div id="clockWrap" class="clockWrap">
+                    <div id="clockArea" class="clockArea">
+                        <div id="clock" class="clock">
+                            <img src="../media/img/clock/clock_box.png" alt="kellakast">
+                            <img src="../media/img/clock/clock_pendulum.png" alt="kellapendel" id="pendulus" class="pendulus">
+                            <div id="clockface" class="clockface">
+                            <img src="../media/img/clock/clock_face.png" alt="kella numbrilaud">
+                            <img src="../media/img/clock/hour_hand.png" alt="kella tunniseier" id="hourhand" class="clockhand">
+                            <img src="../media/img/clock/minute_hand.png" alt="kella minutiseier" id="minutehand" class="clockhand">
+                            <img src="../media/img/clock/second_hand.png" alt="kella sekundiseier" id="secondhand" class="clockhand">
+                            </div>
+                            <img src="../media/img/clock/clock_frame.png" alt="kellakasti raam">
                         </div>
-                        <img src="../media/img/clock/clock_frame.png" alt="kellakasti raam">
+                    </div>
+                    <div id="alarm" class="alarm">
+                        <h3>Äratuskell</h3>
+                        <input id="alarm_hour_btn" type="number" min="0" max="23" value="0">
+                        <input id="alarm_minute_btn" type="number" min="0" max="59" value="0">
+                        <br>
+                        <label for="set_alarm_btn" id="alarmLabel">Lülita äratuskell sisse</label>
+                        <input type="checkbox" id="set_alarm_btn">
+                        <br>
+                        <a href="https://www.freesoundslibrary.com/cow-moo-sound/" target="_blank" class="alarm-credit">Sound Clip</a>
                     </div>
                 </div>
             </section>

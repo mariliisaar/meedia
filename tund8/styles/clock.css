@@ -1,3 +1,22 @@
+.clockWrap {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.clockArea, .alarm {
+	width: 50%;
+}
+
+.alarm {
+	text-align: center;
+}
+
+.alarm-credit {
+	font-size: 8px;
+}
+
 .clockArea {
 	width: 272px;
 	height: 473px;
