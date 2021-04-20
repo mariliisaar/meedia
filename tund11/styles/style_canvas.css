@@ -1,0 +1,114 @@
+body {
+    background-color: #fff;
+    background-image: url("../../media/pics/dragon_center.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 250px; 
+    color: #000;
+    font-family: arial;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: #0E7359;
+}
+
+h1 {
+    text-align: center;
+    transition: color 1s, text-shadow 1s;
+    text-shadow: 2px 2px 3px #445E78;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+h1:hover {
+    color: #440E78;
+    text-shadow: 2px 2px 3px #0E7399;
+}
+
+h2 {
+    text-shadow: 1px 2px 2px #777;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+h2::after, h1::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #0E7359;
+    background: linear-gradient(to right, transparent 0%, #27B28E 50%, transparent 100%);
+}
+
+p {
+    font-family: lucida-casual, verdana, sans-serif;
+}
+
+a:link, a:visited {
+    color: #440E78;
+}
+
+a:hover, a:active {
+    color: #27B28E;
+}
+
+canvas {
+    background-color: #fff;
+    border: 1px solid #440E78;
+    box-shadow: 0px 0px 10px #440E78;
+    margin: auto;
+}
+
+dt {
+    font-weight: 600;
+}
+
+section {
+    background-color: rgba(213, 240, 231, .3);
+    background-image: url("../../media/pics/dragon_top_left.svg"), url("../../media/pics/dragon_top_right.svg"), url("../../media/pics/dragon_bottom_left.svg"), url("../../media/pics/dragon_bottom_right.svg");
+    background-repeat: no-repeat;
+    background-size: 50px, 60px, 70px, 100px;
+    background-position: top left, top right, bottom left, bottom right;
+    background-origin: padding-box;
+    width: 80%;
+    min-width: 100px;
+    min-height: 400px;
+    max-height: 600px;
+    margin: 5px auto;
+    padding: 0 70px 80px 80px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+    /* position: relative; */
+    border-radius: 10px;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to bottom, transparent 0%, #27B28E 50%, transparent 100%) 1 100%;
+    overflow: auto;
+}
+
+section:last-of-type {
+    margin-bottom: 60px;
+}
+
+section h1, h2, h3 {
+    text-align: center;
+    color: #440E78;
+}
+
+section h2 {
+    width: calc(100% - 95px);
+    padding: 20px 50px 0 45px;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(222, 213, 240);
+    position: fixed;
+    bottom: 0px;
+    z-index: 5;
+}

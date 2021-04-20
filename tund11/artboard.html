@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="et">
+    <head>
+        <title>Marilii teeb veebi</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles/style_canvas.css">
+        <script src="javascript/artboard.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Veeb ja meedia elemendid</h1>
+                <p>See veebileht on loodud õppetöö raames ja ei sisalda mõistlikku sisu!</p>
+                <p id="open_message">Pole miskit sõnumit.</p>
+            </header>
+            <section id="graphics">
+                <h2>Joonistamine</h2>
+                <canvas id="canvas" width="960" height="540">Kahjuks Teie brauser ei toeta HTML5 canvas elementi!</canvas>
+                <br>
+                <input type="color" id="drawing_color">
+                <label for="line_width">Joone paksus</label><input id="line_width" type="number" min="1" max="100" value="1">
+                <a href="" download="drawing.png" id="save_pic">Salvesta pilt</a>
+            </section>
+            <footer>
+                <p>Leht lõpeb siin!</p>
+            </footer>
+        </main>
+    </body>
+</html>
