@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="et">
+    <head>
+        <title>Marilii teeb veebi</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles/style_canvas.css">
+        <script src="javascript/game.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Veeb ja meedia elemendid</h1>
+                <p>See veebileht on loodud õppetöö raames ja ei sisalda mõistlikku sisu!</p>
+                <p id="open_message">Pole miskit sõnumit.</p>
+            </header>
+            <section id="graphics">
+                <h2>Mäng</h2>
+                <div class="game_info">
+                    <p>Õigeid tabamusi: <span id="correct">0 / 0</span></p><p>Valesid tabamusi: <span id="incorrect">0 / 0</span></p><p>Mööda: <span id="misses">0 / 0</span></p>
+                </div>
+                <div class="canvas_wrap">
+                    <canvas id="canvas" width="960" height="540">Kahjuks Teie brauser ei toeta HTML5 canvas elementi!</canvas>
+                </div>
+            </section>
+            <footer>
+                <p>Leht lõpeb siin!</p>
+            </footer>
+        </main>
+    </body>
+</html>

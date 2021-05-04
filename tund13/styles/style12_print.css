@@ -1,0 +1,153 @@
+body {
+    margin: 3cm;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16pt;
+}
+
+nav, video, audio {
+    display: none;
+}
+
+.stage { /*NB! ei ole hea praktika!*/
+    width: 900px;
+    min-height: 437px;
+    /* background-color: purple; */
+    position: relative;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+.stage *, .photoplace * {
+    position: absolute;
+}
+
+.landscape {
+    width: 100%;
+    height: 100%;
+}
+
+.img_sky {
+    top: 1px;
+    z-index: 1;
+}
+
+.img_land {
+    z-index: 3;
+}
+
+.windmill {
+    width: 308px;
+    height: 360px;
+    /* border: 1px solid teal; */
+    left: 557px;
+    top: 0px;
+    transform: scale(.5) rotate(3deg);
+    transform-origin: top left;
+    z-index: 2;
+}
+
+.wm_body {
+    bottom: 0px;
+}
+
+.cararea {
+    width: 340px;
+    height: 175px;
+    top: 75px;
+    left: -230px;
+    z-index: 4;
+}
+
+.car {
+    width: 477px;
+    height: 232px;
+    transform-origin: top left;
+    /* top: 153px;
+    left: 20px; */
+    z-index: 4;
+}
+
+.car_wheel {
+    bottom: 0;
+}
+
+.car_wheel_back {
+    left: 32px;
+}
+
+.car_wheel_front {
+    right: 45px;
+}
+
+.night {
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e52;
+    opacity: 0;
+    position: absolute;
+    z-index: 5;
+}
+
+.cone {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.carcone {
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid transparent;
+    border-right: 170px solid #ffffcc;
+    bottom: -20px;
+    right: -110px;
+}
+
+.truckcone {
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 130px solid #ffffcc;
+    bottom: 0px;
+    left: 90px;
+}
+
+.truckarea {
+    width: 104px;
+    height: 59px;
+    z-index: 4;
+}
+
+.truck {
+    /* top: 0;
+    left: 106px; */
+    width: 500px;
+    height: 250px;
+    transform-origin: top left;
+}
+
+.truckwheel {
+    width: 148px;
+    height: 148px;
+    bottom: -32px;
+    transform: scale(.5);
+}
+
+.truckwheelRear {
+    left: 10px;
+}
+
+.truckwheelFront {
+    right: -32px;
+}
+
+.smoke {
+    top: 180px;
+    left: 40px;
+}
+
+.carsmoke {
+    top: 180px;
+    left: 40px;
+}

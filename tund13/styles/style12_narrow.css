@@ -1,0 +1,20 @@
+body {
+    background: none;
+    background-color: #fff;
+}
+
+main {
+    margin: 0 10px;
+}
+
+section {
+    background: none;
+    background-color: rgba(213, 240, 231, .3);
+    padding: 5px;
+}
+
+nav {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+}

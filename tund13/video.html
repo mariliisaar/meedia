@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="et">
+    <head>
+        <title>Marilii teeb veebi</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <script src="javascript/video.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Veeb ja meedia elemendid</h1>
+                <p>See veebileht on loodud õppetöö raames ja ei sisalda mõistlikku sisu!</p>
+                <p id="open_message">Pole miskit sõnumit.</p>
+            </header>
+            <section id="videoplayer">
+                <h2>Subtiitritega video</h2>
+                <video id="movie"controls width="600">
+                    <source src="../../../~rinde/media/videos/zenit12s.mp4" type="video/mp4">
+                    <track id="sub_en" kind="subtitles" label="Subtitles in English" scrlang="en" src="../../../~rinde/media/videos/subtitles/zenit12s_en.vtt">
+                    <track id="sub_et" kind="subtitles" label="Eestikeelsed subtiitrid" scrlang="et" src="../../../~rinde/media/videos/subtitles/zenit12s_et.vtt">
+                </video>
+                <br>
+                <button id="subtitle_btn" type="button">Vaheta subtiitrite keel</button>
+                <p>Tekst: <span id="subtitle_place"></span></p>
+                <h3>Filtrid</h3>
+                <label for="brightness_btn">Heledus: </label>
+                <input type="range" id="brightness_btn" min="0" max="1000" value="100">
+                <br>
+                <label for="contrast_btn">Kontrast: </label>
+                <input type="range" id="contrast_btn" min="0" max="1000" value="100">
+                <br>
+                <label for="saturation_btn">Värviküllastus: </label>
+                <input type="range" id="saturation_btn" min="0" max="1000" value="100">
+                <br>
+                <label for="blur_btn">Hägustamine: </label>
+                <input type="range" id="blur_btn" min="0" max="20" value="0">
+            </section>
+            <footer>
+                <p>Leht lõpeb siin!</p>
+            </footer>
+        </main>
+    </body>
+</html>
