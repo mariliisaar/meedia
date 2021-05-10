@@ -6,27 +6,80 @@ let game_alphabet = [];
 let hit_count = 0;
 let wrong_count = 0;
 let miss_count = 0;
-
-//täiendada mängu!
-//mänguelemendid värviliseks - juhuslikud värvid
-//lugeda ka valesid ja lausa mööda tehtud klikke!
-//Luua mängu alustamine ja lõpetamine koos võimalusega uuesti mängida
-//lisada heliklipid erinevate tabamuste jaoks, miks mitte ka mängu alguseks ja lõpuks. 
-//lisada taustamuusika (võimalusega seda mitte mängida) igasugused muud helid (kui läheb serva vastu, saab pihta jne)
-//lisada ajavõtt (fikseerida algushetk, lõpuhetk,  getTime() annab ajahetke millisekundites ja sellest saab arvutada minutid, sekundid jms).
-//lisada punktisüsteem
-//laske fantaasial lennata!
-
+let id;
+let start;
+let bg = new Audio();
 
 window.onload = function() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
+    document.getElementById("start_game").addEventListener("click", init_game);
+    document.getElementById("music").addEventListener("change", play_music);
     init_game();
 }
 
 function init_game() {
-    add_elements();
-    canvas.addEventListener("mousedown", check_hits);
+    if (document.getElementById("start_game").innerHTML == "Alusta Mängu") {
+        document.getElementById("start_game").innerHTML = "Lõpeta Mäng";
+        set_score();
+        add_elements();
+        canvas.addEventListener("mousedown", check_hits);
+        let d = new Date;
+        start = d.getTime();
+    } else {
+        let d = new Date;
+        cancelAnimationFrame(id);
+        ball_list = [];
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        document.getElementById("start_game").innerHTML = "Alusta Mängu";
+        end_score(d.getTime());
+    }
+}
+
+function play_music() {
+    bg.src = "media/bg.mp3";
+    bg.volume = 0.1;
+    if (document.getElementById("music").checked) {
+        bg.play();
+        bg.onended = function() {
+            bg.play();
+        } 
+    } else {
+        bg.pause();
+    }
+}
+
+function end_score(finish) {
+    if (start != null && ball_list.length == 0) {
+        let show_score = [("Skoor: " + (hit_count * 10 - wrong_count - miss_count * 2)), ("Aeg: " + to_min_sec(finish-start))];
+        document.getElementById("start_game").innerHTML = "Alusta Mängu";
+        hit_count = 0;
+        wrong_count = 0;
+        miss_count = 0;
+        if (document.getElementById("sfx").checked) {
+            let finish = new Audio();
+            finish.src = "media/finish.mp3";
+            finish.play();
+        }
+        draw_score(show_score);
+    }
+}
+
+function to_min_sec(ms) {
+    let min = Math.floor(ms / 60000);
+    let sec = ((ms % 60000) / 1000).toFixed(0);
+    return (sec == 60 ? (min + 1) + ":00" : min + ":" + (sec < 10 ? "0" : "") + sec);
+}
+
+function draw_score(show_score) {
+    ctx.fillStyle = "black";
+    ctx.font = "bold 14px Verdana";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    let lh = 24;
+    for (let i = 0; i < show_score.length; i++) {
+        ctx.fillText(show_score[i], canvas.width / 2, canvas.height / 2 + i * lh);
+    }
 }
 
 function add_elements() {
@@ -63,7 +116,10 @@ function move_elements() {
         ball_list[i].draw_self();
     }
     if (ball_list.length > 0) {
-        requestAnimationFrame(move_elements);
+        id = requestAnimationFrame(move_elements);
+    } else {
+        let d = new Date;
+        end_score(d.getTime());
     }
 }
 
@@ -77,15 +133,37 @@ function check_hits(e) {
             if (ball_list[i].symbol == game_alphabet[hit_count]) {
                 ball_list.splice(i, 1);
                 hit_count++;
-            break;
+                if (document.getElementById("sfx").checked) {
+                    let hit = new Audio();
+                    hit.src = "media/hit.mp3";
+                    hit.play();
+                }
+                break;
             } else {
                 wrong_count++;
+                if (document.getElementById("sfx").checked) {
+                    let miss = new Audio();
+                    miss.src = "media/miss.mp3";
+                    miss.play();
+                }
             }          
         }
     }
     if (!hit) {
         miss_count++;
+        if (document.getElementById("sfx").checked) {
+            let boo = new Audio();
+            boo.src = "media/boo.mp3";
+            boo.play();
+        }
     }
+    set_score();
+}
+
+function set_score() {
+    document.getElementById("correct").innerHTML = hit_count + " / " + elements_limit;
+    document.getElementById("incorrect").innerHTML = wrong_count;
+    document.getElementById("misses").innerHTML = miss_count;
 }
 
 function pythagoras(b_x, b_y, m_x, m_y) {

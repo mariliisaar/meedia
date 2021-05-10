@@ -18,10 +18,20 @@
             <section id="graphics">
                 <h2>Mäng</h2>
                 <div class="game_info">
-                    <p>Õigeid tabamusi: <span id="correct">0 / 0</span></p><p>Valesid tabamusi: <span id="incorrect">0 / 0</span></p><p>Mööda: <span id="misses">0 / 0</span></p>
+                    <p>Õigeid tabamusi: <span id="correct">0 / 0</span></p><p>Valesid tabamusi: <span id="incorrect">0</span></p><p>Mööda: <span id="misses">0</span></p>
                 </div>
                 <div class="canvas_wrap">
                     <canvas id="canvas" width="960" height="540">Kahjuks Teie brauser ei toeta HTML5 canvas elementi!</canvas>
+                </div>
+                <div class="button_wrap">
+                    <button id="start_game" class="game_button"></button>
+                    <br>
+                    <input type="checkbox" id="music"><label for="music">Taustamuusika</label>
+                    <input type="checkbox" id="sfx"><label for="sfx">Heliefektid</label>
+                </div>
+                <div class="credit">
+                    <p>Taustamuusika: <a href="https://www.chosic.com" target="_blank">https://www.chosic.com</a></p>
+                    <p>Heliefektid: <a href="https://www.zapsplat.com" target="_blank">https://www.zapsplat.com</a></p>
                 </div>
             </section>
             <footer>
