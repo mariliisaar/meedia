@@ -1,0 +1,94 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.cubecontainer {
+	width:400px;
+	height: 400px;
+	perspective: 800px;/*määrab  kauguse vaatajast*/
+	perspective-origin: 50% 50%;/*perspektiivpunkt*/
+}
+
+.cube {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+	margin: 100px auto;
+}
+
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;	
+	color: rgba(0,0,0,0.8);
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	font-family: Verdana, sans-serif;
+	font-weight: 800;
+	text-align: center;
+}
+
+.back {
+	transform: translateZ(-100px) rotateY(180deg);
+}
+
+.backcover {
+	background: rgba(255,0,0,0.2);
+
+}
+
+.left {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+}
+
+.leftcover {
+	background: rgba(0,255,0,0.2);
+}
+
+.right {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+}
+
+.rightcover {
+	background: rgba(0,0,255,0.2);
+}
+
+.top {
+	transform: rotateX(-90deg) rotateY(180deg) translateY(-100px);
+	transform-origin: top center;
+}
+
+.topcover {
+	background: rgba(255,255,0,0.2);
+}
+
+.bottom {
+	transform: rotateX(90deg) rotateY(180deg) translateY(100px);
+	transform-origin: bottom center;
+}
+
+.bottomcover {
+	background: rgba(255,0,255,0.2);
+}
+
+.front {
+	transform: translateZ(100px);
+}
+
+.frontcover {
+	background: rgba(0,255,255,0.2);
+}
+
+.hide{
+	backface-visibility: hidden;
+}
